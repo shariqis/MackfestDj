@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Uploaded Files</h1>
+    <ul>
+        {% for item in student_files %}
+            <li>{{ item.file.name }}</li>
+            <li>{{ item.file.uploaded_at | date:"d-m-Y H:i:s" }}</li>
+            <li><a href="{{ item.file.url }}" target="_blank">View File</a></li>
+            <li> <img src="{{ item.file.url }}" alt="" width="200" height="200"> </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
